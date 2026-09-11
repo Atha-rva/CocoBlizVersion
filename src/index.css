@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-body bg-coco-cream text-coco-dark antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .container-coco {
+    @apply mx-auto max-w-7xl px-6 md:px-8 lg:px-12;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-coco-green px-8 py-4 text-sm font-semibold tracking-wide text-coco-cream transition-all duration-300 hover:bg-coco-deep hover:shadow-xl hover:shadow-coco-green/20 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-coco-green/30 bg-transparent px-8 py-4 text-sm font-semibold tracking-wide text-coco-green transition-all duration-300 hover:bg-coco-green hover:text-coco-cream active:scale-95;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-accent-gold px-8 py-4 text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:bg-accent-golddark hover:shadow-xl hover:shadow-accent-gold/30 active:scale-95;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-accent-gold via-accent-goldlight to-accent-gold bg-clip-text text-transparent;
+  }
+
+  .card-hover {
+    @apply transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-coco-green/10;
+  }
+
+  .glass {
+    @apply bg-white/80 backdrop-blur-md;
+  }
+}
+
+@layer utilities {
+  .animate-delay-100 { animation-delay: 0.1s; }
+  .animate-delay-200 { animation-delay: 0.2s; }
+  .animate-delay-300 { animation-delay: 0.3s; }
+  .animate-delay-500 { animation-delay: 0.5s; }
+  .animate-delay-700 { animation-delay: 0.7s; }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
