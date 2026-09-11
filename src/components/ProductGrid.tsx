@@ -1,14 +1,14 @@
 import { useMemo, useState } from 'react';
 import { products, productCategories, type Product } from '@/data/products';
 import { ProductCard } from './ProductCard';
-import { Reveal } from './Reveal';
 
 interface ProductGridProps {
   products?: Product[];
   showFilter?: boolean;
+  onSelectProduct?: (product: Product) => void;
 }
 
-export function ProductGrid({ products: items, showFilter = true }: ProductGridProps) {
+export function ProductGrid({ products: items, showFilter = true, onSelectProduct }: ProductGridProps) {
   const [activeCategory, setActiveCategory] = useState('All Products');
 
   const filtered = useMemo(() => {
@@ -42,13 +42,18 @@ export function ProductGrid({ products: items, showFilter = true }: ProductGridP
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((product, i) => (
-          <ProductCard key={`${activeCategory}-${product.id}`} product={product} index={i} />
+          <ProductCard
+            key={`${activeCategory}-${product.id}`}
+            product={product}
+            index={i}
+            onSelect={onSelectProduct}
+          />
         ))}
       </div>
 
       {filtered.length === 0 && (
-        <div className="text-center py-20">
-          <p className="text-coco-dark/40 text-lg">No products in this category yet.</p>
+        <div className="py-20 text-center">
+          <p className="text-lg text-coco-dark/40">No products in this category yet.</p>
         </div>
       )}
     </div>
