@@ -22,6 +22,30 @@ export const productCategories = [
 
 export const products: Product[] = [
   {
+    id: '0',
+    name: 'Fresh Coconut / Tender Coconut Water',
+    slug: 'fresh-coconut-tender-coconut-water',
+    description: '100% tender coconut water with natural electrolytes and a clean tropical finish.',
+    longDescription:
+      'Fresh Coconut / Tender Coconut Water by CocoBlitz is made from 100% tender coconut water, sourced from Pollachi Farms in Tamil Nadu. It delivers a naturally refreshing taste with key electrolytes including potassium, sodium, magnesium, and calcium, and is packed for a clean, convenient hydration experience.',
+    image: 'https://images.pexels.com/photos/11218810/pexels-photo-11218810.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    category: 'Coconut Water',
+    tags: ['100% Tender Coconut Water', 'Natural Electrolytes', 'No Additives'],
+    specs: [
+      { label: 'Serving Size', value: '250 ml' },
+      { label: 'Energy', value: '40 kcal' },
+      { label: 'Carbohydrate', value: '7–10 g' },
+      { label: 'Natural Sugars', value: '6–9 g' },
+      { label: 'Potassium', value: '400–500 mg' },
+      { label: 'Sodium', value: '40–60 mg' },
+      { label: 'Magnesium', value: '15–30 mg' },
+      { label: 'Storage', value: 'Cool, dry place; chill before consumption' },
+      { label: 'Origin', value: 'India / Pollachi Farms, Tamil Nadu' },
+      { label: 'FSSAI No.', value: '22726446003279' },
+      { label: 'Patent Application No.', value: '202611076200' },
+    ],
+  },
+  {
     id: '1',
     name: 'Virgin Coconut Oil',
     slug: 'virgin-coconut-oil',

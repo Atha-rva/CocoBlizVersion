@@ -1,15 +1,16 @@
 export const siteConfig = {
   name: 'CocoBlitz',
-  tagline: 'Coconut. Reimagined.',
+  tagline: 'Fresh Coconut. Tender Coconut Water.',
   description:
-    'Naturally sourced. Carefully processed. Built for quality. CocoBlitz delivers premium coconut products crafted with expertise and consistency.',
-  email: 'hello@cocoblitz.com',
-  phone: '+94 77 123 4567',
-  address: 'No. 42, Coconut Grove Lane, Colombo, Sri Lanka',
+    'CocoBlitz India Pvt. Ltd. brings naturally refreshing coconut water and premium coconut products to the market with quality, consistency, and trust.',
+  email: 'support@cocoblitz.com',
+  phone: '',
+  website: 'cocoblitz.com',
+  address: '285, Vill+Post Tilapta, Dadri Main Road, Greater Noida, U.P., India',
   social: {
-    instagram: '#',
-    facebook: '#',
-    linkedin: '#',
+    instagram: 'https://instagram.com/cocoblitzindia',
+    facebook: 'https://facebook.com/cocoblitzindia',
+    linkedin: 'https://www.linkedin.com/company/cocoblitzindia',
   },
   nav: [
     { label: 'Home', path: '/' },

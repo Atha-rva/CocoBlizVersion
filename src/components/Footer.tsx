@@ -1,4 +1,4 @@
-import { Leaf, Mail, Phone, MapPin, Instagram, Facebook, Linkedin, ArrowUpRight } from 'lucide-react';
+import { Leaf, Mail, Phone, MapPin, Instagram, Facebook, Linkedin, ArrowUpRight, Globe } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import { Link } from './Router';
 
@@ -49,12 +49,24 @@ export function Footer() {
             <ul className="space-y-3.5">
               <li className="flex items-start gap-3 text-sm text-coco-cream/50">
                 <Mail className="h-4 w-4 mt-0.5 text-accent-gold flex-shrink-0" />
-                <span>{siteConfig.email}</span>
+                <a href={`mailto:${siteConfig.email}`} className="hover:text-accent-gold transition-colors">
+                  {siteConfig.email}
+                </a>
               </li>
-              <li className="flex items-start gap-3 text-sm text-coco-cream/50">
-                <Phone className="h-4 w-4 mt-0.5 text-accent-gold flex-shrink-0" />
-                <span>{siteConfig.phone}</span>
-              </li>
+              {siteConfig.phone && (
+                <li className="flex items-start gap-3 text-sm text-coco-cream/50">
+                  <Phone className="h-4 w-4 mt-0.5 text-accent-gold flex-shrink-0" />
+                  <span>{siteConfig.phone}</span>
+                </li>
+              )}
+              {siteConfig.website && (
+                <li className="flex items-start gap-3 text-sm text-coco-cream/50">
+                  <Globe className="h-4 w-4 mt-0.5 text-accent-gold flex-shrink-0" />
+                  <a href={`https://${siteConfig.website}`} target="_blank" rel="noreferrer" className="hover:text-accent-gold transition-colors">
+                    {siteConfig.website}
+                  </a>
+                </li>
+              )}
               <li className="flex items-start gap-3 text-sm text-coco-cream/50">
                 <MapPin className="h-4 w-4 mt-0.5 text-accent-gold flex-shrink-0" />
                 <span>{siteConfig.address}</span>
@@ -76,6 +88,8 @@ export function Footer() {
                 <a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noreferrer"
                   aria-label={label}
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-coco-green/40 text-coco-cream/60 transition-all duration-300 hover:bg-accent-gold hover:text-white"
                 >
@@ -99,7 +113,7 @@ export function Footer() {
             &copy; {new Date().getFullYear()} CocoBlitz. All rights reserved.
           </p>
           <p className="text-xs text-coco-cream/40">
-            Crafted with care from Sri Lanka.
+            Crafted with care from India.
           </p>
         </div>
       </div>

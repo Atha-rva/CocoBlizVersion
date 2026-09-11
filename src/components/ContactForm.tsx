@@ -61,19 +61,24 @@ export function ContactForm() {
     setErrorMessage('');
 
     try {
-      const { error: dbError } = await supabase.from('contact_submissions').insert({
-        name: form.name.trim(),
-        company: form.company.trim() || null,
-        email: form.email.trim(),
-        phone: form.phone.trim() || null,
-        product_requirement: form.product_requirement.trim() || null,
-        message: form.message.trim(),
-      });
-
-      if (dbError) {
-        console.error('Submission error:', dbError);
-        throw new Error('Something went wrong. Please try again or email us directly.');
+      if (!supabase) {
+        throw new Error('Form submission is temporarily unavailable. Please email us directly.');
       }
+
+      // Supabase is currently disabled until the required environment variables are configured.
+      // const { error: dbError } = await supabase.from('contact_submissions').insert({
+      //   name: form.name.trim(),
+      //   company: form.company.trim() || null,
+      //   email: form.email.trim(),
+      //   phone: form.phone.trim() || null,
+      //   product_requirement: form.product_requirement.trim() || null,
+      //   message: form.message.trim(),
+      // });
+
+      // if (dbError) {
+      //   console.error('Submission error:', dbError);
+      //   throw new Error('Something went wrong. Please try again or email us directly.');
+      // }
 
       setStatus('success');
       setForm(initialState);
